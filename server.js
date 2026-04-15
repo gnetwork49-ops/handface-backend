@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
-const config = require("./config");
 const logger = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
 
