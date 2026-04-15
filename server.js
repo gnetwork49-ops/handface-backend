@@ -16,6 +16,11 @@ const io = new Server(server, { cors: corsOptions });
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(logger);
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
 app.set("io", io);
 
 app.use("/api/auth", require("./routes/auth"));

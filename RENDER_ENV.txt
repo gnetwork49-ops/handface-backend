@@ -1,7 +1,7 @@
 # Render Environment Variables Configuration
 # Add these in your Render Dashboard → Web Service → Environment
 
-# Database Connection (use exactly this format from your Render PostgreSQL)
+# Database Connection (use exactly this format from your Render PostgreSQL Internal URL)
 DATABASE_URL=postgres://postgres:12345@dpg-d7fj7q77f7vs73a2eai0-a.oregon-postgres.render.com:5432/handface
 
 # JWT Secret (change to a secure random string)
