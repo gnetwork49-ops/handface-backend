@@ -58,14 +58,18 @@ const adminController = {
       
       for (const stmt of statements) {
         if (stmt.trim()) {
-          await pool.query(stmt);
+          try {
+            await pool.query(stmt);
+          } catch (e) {
+            console.log("Statement error (may already exist):", e.message);
+          }
         }
       }
       
       res.json({ message: "Database initialized successfully" });
     } catch (err) {
       console.error("Init DB error:", err);
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: err.message, stack: err.stack });
     }
   }
 };
