@@ -53,7 +53,7 @@ const adminController = {
 
   async initDb(req, res) {
     try {
-      const initSql = fs.readFileSync(path.join(__dirname, "..", "init.sql"), "utf-8");
+      const initSql = fs.readFileSync(path.resolve(__dirname, "..", "init.sql"), "utf-8");
       const statements = initSql.split(";").filter(s => s.trim());
       
       for (const stmt of statements) {
